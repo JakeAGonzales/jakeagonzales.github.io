@@ -30,8 +30,7 @@
         .student-info {
             font-size: 14px; /* Adjust this value to the desired font size */
             margin-bottom: 8px; /* Adjust this value for the desired spacing between lines */
-            text-align: left; /* Left-align the text */
-            display: inline-block; /* Ensure the text block is inline */
+            text-align: center; /* Center-align the text */
         }
 
         .view a {
@@ -57,6 +56,12 @@
 
         .view {
             margin-bottom: 5px; /* Adjust this value to control spacing between links */
+        }
+
+        .about-me {
+            text-align: left;
+            margin: 20px auto; /* Adjust margin as needed */
+            width: 70%; /* Adjust width as needed */
         }
     </style>
 </head>
@@ -94,8 +99,13 @@
             <p class="view"><a href="https://another-example.com">View Another Project</a></p>
             <p class="view"><a href="https://yet-another-example.com">View Yet Another Project</a></p>
         </header>
-        <section>
-            {{ content }}
+        <section class="about-me">
+            <p>
+                I’m currently a PhD student at the University of Washington where I am advised by Prof. Behcet Acikmese and Prof. Lillian Ratliff. My research interests are broadly at the intersection of control theory, machine learning, and optimization. I’m currently working on developing safe and scalable decision-making algorithms for multi-agent autonomous mobility.
+            </p>
+            <p>
+                Previously, I got an undergraduate degree in electrical engineering from the University of New Mexico. There, I worked in the Human-Centered Systems and Control Lab where I was advised by Prof. Meeko Oishi. I did research in data-driven stochastic optimal control.
+            </p>
         </section>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
