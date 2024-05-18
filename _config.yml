@@ -1,8 +1,8 @@
 theme: jekyll-theme-minimal
 
 # make things wider
-layout: single
-classes: wide
+#layout: single
+#classes: wide
 
 # Google Analytics
 #google_analytics: UA-154472137-1
