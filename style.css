@@ -322,29 +322,32 @@ h3 a:hover {
     padding-bottom: 0.5em;
 }
 
-/* Styles specific to teaching */
-.list-item.teaching ul {
+.list-item ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.list-item.teaching li {
+.list-item li {
     margin-bottom: 2em;
 }
 
-.course-header {
+/* Styles for teaching */
+.course-header,
+.service-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 0.3em;
 }
 
-.course-header strong {
+.course-header strong,
+.service-header strong {
     font-size: 1.1em;
     color: rgb(20, 110, 190);
 }
 
-.course-meta {
+.course-meta,
+.service-meta {
     font-size: 0.9em;
     color: #666;
 }
@@ -355,29 +358,20 @@ h3 a:hover {
     margin-bottom: 0.5em;
 }
 
-.list-item.teaching li p {
+.list-item li p {
     margin-top: 0.3em;
     color: #555;
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
-    .course-header {
+    .course-header,
+    .service-header {
         flex-direction: column;
     }
     
-    .course-meta {
+    .course-meta,
+    .service-meta {
         margin-top: 0.2em;
     }
-}
-
-/* Styles specific to service (unchanged from before) */
-.list-item.service p {
-    margin-bottom: 1em;
-}
-
-.list-item.service p strong {
-    font-size: 1.1em;
-    color: rgb(20, 110, 190);
-    display: block;
-    margin-bottom: 0.3em;
 }
