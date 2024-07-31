@@ -306,17 +306,19 @@ h3 a:hover {
 }
 
 
-/* NEWS SECTION */
+/* News section */
 #news {
   margin-top: 2em;
-  padding-top: 1em;
+  margin-bottom: 3em; /* Increased bottom margin for more separation */
+  padding: 1.5em 0; /* Increased padding */
   border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0; /* Added bottom border for more distinction */
 }
 
 #news h2 {
-  font-size: 1.2em;
+  font-size: 1.8em; /* Increased font size */
   color: #150c21;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
 }
 
 #news ul {
@@ -331,7 +333,7 @@ h3 a:hover {
 }
 
 #news li::before {
-  content: "\25B6"; /* Filled right-pointing triangle */
+  content: "\25B6";
   color: rgb(20, 110, 190);
   font-size: 0.8em;
   margin-right: 0.5em;
@@ -347,6 +349,40 @@ h3 a:hover {
 
 .news-description {
   color: #150c21;
+}
+
+.view-all {
+  margin-top: 1.5em;
+  text-align: right;
+}
+
+.view-all a {
+  color: rgb(20, 110, 190);
+  font-weight: 600;
+}
+
+.view-all a:hover {
+  text-decoration: underline;
+}
+
+/* ALL NEWS SECTION CSS */ 
+/* All News page */
+#all-news ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#all-news li {
+  margin-bottom: 1.5em;
+  display: flex;
+  align-items: baseline;
+}
+
+#all-news li::before {
+  content: "\25B6";
+  color: rgb(20, 110, 190);
+  font-size: 0.8em;
+  margin-right: 0.5em;
 }
 
 /* TEACHING AND SERVICE CSS */ 
