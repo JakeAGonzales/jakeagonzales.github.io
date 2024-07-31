@@ -356,7 +356,8 @@ h3 a:hover {
 .course-header strong,
 .service-header strong {
     font-size: 1.1em;
-    color: rgb(20, 110, 190);
+    color: #000000;
+    font-weight: 700; 
 }
 
 .course-meta,
