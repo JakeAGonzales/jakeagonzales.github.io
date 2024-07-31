@@ -308,45 +308,76 @@ h3 a:hover {
 /* TEACHING AND SERVICE CSS */ 
 /* Add this to your existing CSS file */
 
+/* Common styles for both teaching and service */
 .list-item.teaching,
 .list-item.service {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 .list-item h3 {
-  font-size: 1.4em;
-  color: #150c21;
-  margin-bottom: 1em;
-  border-bottom: 2px solid #a0a8b0;
-  padding-bottom: 0.5em;
+    font-size: 1.4em;
+    color: #150c21;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #a0a8b0;
+    padding-bottom: 0.5em;
 }
 
-.list-item ul {
-  list-style-type: none;
-  padding-left: 0;
+/* Styles specific to teaching */
+.list-item.teaching ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-.list-item li {
-  margin-bottom: 1.5em;
+.list-item.teaching li {
+    margin-bottom: 2em;
 }
 
-.list-item li strong {
-  font-size: 1.1em;
-  color: rgb(20, 110, 190);
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3em;
 }
 
-.list-item li p {
-  margin-top: 0.5em;
-  color: #555;
+.course-header strong {
+    font-size: 1.1em;
+    color: rgb(20, 110, 190);
 }
 
+.course-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.course-role {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5em;
+}
+
+.list-item.teaching li p {
+    margin-top: 0.3em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .course-header {
+        flex-direction: column;
+    }
+    
+    .course-meta {
+        margin-top: 0.2em;
+    }
+}
+
+/* Styles specific to service (unchanged from before) */
 .list-item.service p {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .list-item.service p strong {
-  font-size: 1.1em;
-  color: rgb(20, 110, 190);
-  display: block;
-  margin-bottom: 0.3em;
+    font-size: 1.1em;
+    color: rgb(20, 110, 190);
+    display: block;
+    margin-bottom: 0.3em;
 }
