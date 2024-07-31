@@ -357,7 +357,7 @@ h3 a:hover {
 .service-header strong {
     font-size: 1.1em;
     color: #000000;
-    font-weight: normal; 
+    font-weight: 500; 
 }
 
 .course-meta,
