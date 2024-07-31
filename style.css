@@ -307,31 +307,41 @@ h3 a:hover {
 
 /* TEACHING AND SERVICE CSS */ 
 /* Common styles for both teaching and service */
-
-/* Common styles for both teaching and service */
 .list-item.teaching,
 .list-item.service {
     margin-bottom: 2em;
 }
 
-.list-item.teaching h3,
-.list-item.service h3 {
-    font-size: 1.4em;
-    color: #150c21;
-    margin-bottom: 1em;
-    border-bottom: 2px solid #a0a8b0;
-    padding-bottom: 0.5em;
-}
-
-.list-item.teaching ul,
-.list-item.service ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .list-item.teaching li,
 .list-item.service li {
     margin-bottom: 2em;
+}
+
+.course-header,
+.service-header {
+    margin-bottom: 0.5em;
+}
+
+.course-role {
+    margin-bottom: 0.5em;
+}
+
+.list-item.teaching li p,
+.list-item.service li p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+/* Add this new rule */
+.list-item.teaching ul,
+.list-item.service ul {
+    padding-left: 0;
+}
+
+/* Add this new rule */
+.list-item.teaching li:last-child,
+.list-item.service li:last-child {
+    margin-bottom: 0;
 }
 
 /* Styles for teaching and service */
