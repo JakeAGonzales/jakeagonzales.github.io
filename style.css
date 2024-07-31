@@ -308,9 +308,9 @@ h3 a:hover {
 
 /* News section */
 #news {
-  margin-top: 1em; /* Reduced from 2em */
-  margin-bottom: 1em; /* Reduced from 3em */
-  padding: 1em 0; /* Reduced from 1.5em */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -318,7 +318,7 @@ h3 a:hover {
 #news h2 {
   font-size: 1.8em;
   color: #150c21;
-  margin-bottom: 0.6em; /* Slightly reduced from 0.8em */
+  margin-bottom: 0.3em;
 }
 
 #news ul {
@@ -327,7 +327,7 @@ h3 a:hover {
 }
 
 #news li {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   display: flex;
   align-items: baseline;
 }
@@ -352,7 +352,7 @@ h3 a:hover {
 }
 
 .view-all {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   text-align: right;
 }
 
