@@ -308,17 +308,17 @@ h3 a:hover {
 
 /* News section */
 #news {
-  margin-top: 2em;
-  margin-bottom: 3em; /* Increased bottom margin for more separation */
-  padding: 1.5em 0; /* Increased padding */
+  margin-top: 1.5em; /* Reduced from 2em */
+  margin-bottom: 1.5em; /* Reduced from 3em */
+  padding: 1em 0; /* Reduced from 1.5em */
   border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0; /* Added bottom border for more distinction */
+  border-bottom: 1px solid #e0e0e0;
 }
 
 #news h2 {
-  font-size: 1.8em; /* Increased font size */
+  font-size: 1.8em;
   color: #150c21;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em; /* Slightly reduced from 0.8em */
 }
 
 #news ul {
