@@ -308,9 +308,9 @@ h3 a:hover {
 
 /* News section */
 #news {
-  margin-top: 0em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
-  padding: 0;
+  padding: 0.5em 0;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -318,13 +318,16 @@ h3 a:hover {
 #news h2 {
   font-size: 1.8em;
   color: #150c21;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.2em; /* Reduced from 0.3em */
+  margin-top: 0; /* Added to remove top margin */
 }
 
 #news ul {
   list-style-type: none;
   padding-left: 0;
+  margin-top: 0.2em; /* Added to reduce space below header */
 }
+
 
 #news li {
   margin-bottom: 0.5em;
