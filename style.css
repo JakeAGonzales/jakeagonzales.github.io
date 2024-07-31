@@ -306,9 +306,8 @@ h3 a:hover {
 }
 
 /* TEACHING AND SERVICE CSS */ 
-/* Add this to your existing CSS file */
-
 /* Common styles for both teaching and service */
+
 .list-item.teaching,
 .list-item.service {
     margin-bottom: 2em;
