@@ -308,12 +308,14 @@ h3 a:hover {
 /* TEACHING AND SERVICE CSS */ 
 /* Common styles for both teaching and service */
 
+/* Common styles for both teaching and service */
 .list-item.teaching,
 .list-item.service {
     margin-bottom: 2em;
 }
 
-.list-item h3 {
+.list-item.teaching h3,
+.list-item.service h3 {
     font-size: 1.4em;
     color: #150c21;
     margin-bottom: 1em;
@@ -321,16 +323,18 @@ h3 a:hover {
     padding-bottom: 0.5em;
 }
 
-.list-item ul {
+.list-item.teaching ul,
+.list-item.service ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.list-item li {
+.list-item.teaching li,
+.list-item.service li {
     margin-bottom: 2em;
 }
 
-/* Styles for teaching */
+/* Styles for teaching and service */
 .course-header,
 .service-header {
     display: flex;
@@ -357,7 +361,8 @@ h3 a:hover {
     margin-bottom: 0.5em;
 }
 
-.list-item li p {
+.list-item.teaching li p,
+.list-item.service li p {
     margin-top: 0.3em;
     color: #555;
 }
