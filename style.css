@@ -304,3 +304,49 @@ h3 a:hover {
   bottom: 0;
   line-height: 2.5em;
 }
+
+/* TEACHING AND SERVICE CSS */ 
+/* Add this to your existing CSS file */
+
+.list-item.teaching,
+.list-item.service {
+  margin-bottom: 2em;
+}
+
+.list-item h3 {
+  font-size: 1.4em;
+  color: #150c21;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #a0a8b0;
+  padding-bottom: 0.5em;
+}
+
+.list-item ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-item li {
+  margin-bottom: 1.5em;
+}
+
+.list-item li strong {
+  font-size: 1.1em;
+  color: rgb(20, 110, 190);
+}
+
+.list-item li p {
+  margin-top: 0.5em;
+  color: #555;
+}
+
+.list-item.service p {
+  margin-bottom: 1em;
+}
+
+.list-item.service p strong {
+  font-size: 1.1em;
+  color: rgb(20, 110, 190);
+  display: block;
+  margin-bottom: 0.3em;
+}
