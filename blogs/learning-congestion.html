@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Gonzales | Blog</title>
+    <title>Learning Congestion in Multi-Agent Path Finding | Jake Gonzales Blog</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        h1 {
+        h1, h2 {
             color: #2c3e50;
         }
         .date {
@@ -23,10 +23,6 @@
         .description {
             font-weight: bold;
             margin-bottom: 20px;
-        }
-        h2 {
-            color: #34495e;
-            margin-top: 30px;
         }
         .home-button {
             display: inline-block;
@@ -40,6 +36,10 @@
         .home-button:hover {
             background-color: #34495e;
         }
+        .math {
+            overflow-x: auto;
+            margin: 1em 0;
+        }
     </style>
     <!-- MathJax for rendering math -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -47,17 +47,54 @@
 </head>
 <body>
     <a href="../index.html" class="home-button">Back to Home</a>
-
     <h1>Learning Congestion in Multi-Agent Path Finding</h1>
-    <p class="date">June 30, 2024</p>
-    <p class="description">A brief description of your blog post goes here.</p>
+    <p class="date">September 10, 2024</p>
+    <p class="description">Exploring the integration of machine learning techniques to predict and manage congestion in Multi-Agent Path Finding scenarios, enhancing scalability and efficiency in complex environments.</p>
 
     <h2>Introduction</h2>
-    <p>In multi-agent path finidng (MAPF) agents solve combinatorial constraint satisfaction problems to find optimal, collision-free paths from an origin to a destination (o-d pair). From the perspective of one agent, the environment is changing based on the actions of another agent. Due to this agent interaction we have a non-stationary environment. Agents need to learn how to dynamically make decisions based on other agents actions.</p>
+    <p>Multi-agent path finding (MAPF) is a fundamental problem in artificial intelligence and robotics, involving the coordination of multiple agents to navigate from their respective origins to destinations without collisions. At its core, MAPF can be formulated as a constraint satisfaction problem, where the primary objective is to determine collision-free paths for all agents while optimizing various criteria such as path length, system throughput, and completion time. The problem's complexity stems from the need to consider the interdependencies between agents' movements and the exponential growth of the solution space as the number of agents increases.</p>
 
+    <p>The most significant challenge in MAPF is scalability, as the computational complexity grows rapidly with the number of agents and the size of the environment. Current state-of-the-art approaches to tackle this challenge include Conflict-Based Search (CBS), a two-level algorithm that separates path planning and conflict resolution. CBS operates by initially computing optimal paths for each agent independently, then identifying and resolving conflicts through a constraint tree search. This method allows for efficient handling of larger instances by focusing computational resources on resolving conflicts rather than exhaustively exploring the joint state space of all agents.</p>
 
-    <h2>Conclusion</h2>
-    <p>By learning congestion ...</p>
+    <p>Congestion is undoubtedly a critical factor in MAPF scenarios, particularly in high-density environments or those with limited resources. Predicting and managing congestion across the flow of agents is crucial for improving overall system throughput and anticipating agent interactions. By incorporating congestion prediction into MAPF algorithms, we can potentially enhance path planning strategies, leading to more efficient and robust solutions in complex, multi-agent environments.</p>
+
+    <h2>Congestion Prediction</h2>
+    <p>In recent years, machine learning methods have gained significant traction in the field of Multi-Agent Path Finding (MAPF), offering promising avenues to enhance the scalability and efficiency of existing solvers. These data-driven approaches leverage patterns and heuristics learned from vast amounts of MAPF instances to guide search algorithms, prune search spaces, or directly approximate solutions. By incorporating machine learning techniques, researchers aim to overcome the computational bottlenecks associated with traditional exact solvers, especially when dealing with large-scale problems involving hundreds or thousands of agents. In light of this, we developed a deep learning approach to perform congestion prediction across warehouse floors in MAPF scenarios. This method aims to anticipate areas of high agent density and potential conflicts, thereby informing path planning decisions and improving overall system throughput.</p>
+
+    <p>Formally, we model the MAPF problem on a graph abstraction \(\mathcal{G} = (\mathcal{V}, \mathcal{E})\), where \(\mathcal{V}\) represents the set of vertices (locations) and \(\mathcal{E}\) denotes the set of edges (connections between adjacent locations). Let \(A = \{a_1, a_2, \ldots, a_n\}\) be the set of \(n\) agents. Each agent \(a_i\) has a start vertex \(s_i \in \mathcal{V}\) and a goal vertex \(g_i \in \mathcal{V}\). Time is discretized, and at each time step, an agent can either move to an adjacent vertex or wait at its current vertex. A solution to the MAPF problem is a set of paths \(P = \{p_1, p_2, \ldots, p_n\}\), where \(p_i = \langle v_i^0, v_i^1, \ldots, v_i^k \rangle\) represents the path of agent \(a_i\), with \(v_i^0 = s_i\) and \(v_i^k = g_i\). The solution must satisfy the following constraints:</p>
+
+    <ol>
+        <li>Vertex collision: \(\forall i \neq j, \forall t, v_i^t \neq v_j^t\)</li>
+        <li>Edge collision: \(\forall i \neq j, \forall t, (v_i^t, v_i^{t+1}) \neq (v_j^{t+1}, v_j^t)\)</li>
+    </ol>
+
+    <p>The objective is typically to minimize a cost function, such as the sum of individual path lengths or the makespan (maximum individual path length). The computational complexity of optimal MAPF is NP-hard, necessitating the development of efficient approximate or bounded suboptimal algorithms for practical applications.</p>
+
+    <h2>Background and Setup</h2>
+    <p>In our large hierarchical framework, we decompose the warehouse into subregions to better learn congestion patterns. We focus on learning congestion within these subregions, specifically utilizing a 14x14 subregion with obstacles. The number of agents in each subregion is determined by a heuristic based on the subregion size, resulting in 4-16 agents per subregion. Each agent's source-destination pair is set such that the agent starts on a boundary node of the subregion and attempts to reach the opposite boundary.</p>
+
+    <p>We connect these learned congestion models to nonatomic routing games to solve for equilibrium solution concepts of the traffic flow from large fleets of agents. This will be explained in a later blog post. In this context, each edge has an associated congestion function where we aim to learn this function across the map. The congestion function is expressed as:</p>
+
+    <div class="math">
+    \[
+        l(x) = Ax + b
+    \]
+    </div>
+
+    <p>where \(l(x)\) is the congestion function we are learning, \(A\) is the congestion coefficient matrix, \(x\) represents the flow (agents traveling across nodes), and \(b\) is the free flow time.</p>
+
+    <h2>Setup</h2>
+    <h3>Data Preparation</h3>
+    <p>We collected and prepared data from multiple instances of Conflict-Based Search (CBS). Our dataset comprises approximately 25,000 problem instances for training and 5,000 problem instances for testing. This extensive dataset allows us to capture a wide range of congestion scenarios and agent interactions within the defined subregions, providing a robust foundation to learn congestion.</p>
+
+    <h3>Architecture</h3>
+    <p>Our congestion prediction model is designed to capture complex spatiotemporal interactions while maintaining computational efficiency. The architecture integrates graph convolutional networks (GCNs), recurrent processing, and attention mechanisms to model the evolving dynamics of multi-agent systems. Central to our approach is the use of GCN layers to encode spatial relationships within the environment. These layers enable the model to learn hierarchical representations of the graph structure, capturing both local and global topological features. By stacking multiple GCN layers, we allow for the propagation of information across the graph, effectively modeling long-range spatial dependencies.</p>
+
+    <p>To address the temporal aspect of congestion, which is crucial in MAPF scenarios, we employ a gated recurrent unit (GRU). This recurrent component processes the sequence of graph embeddings, enabling the model to capture and retain information about the temporal evolution of congestion patterns. The GRU's ability to model long-term dependencies is particularly valuable in scenarios where past agent movements significantly influence future congestion states.</p>
+
+    <p>We further enhance the model's capacity to focus on relevant spatiotemporal features through a multi-head attention mechanism. This component allows for dynamic, learned weighting of different time steps and spatial locations, effectively creating adaptive receptive fields that can span both space and time. The attention mechanism is complemented by residual connections and layer normalization, techniques that facilitate training of deeper networks and maintain sensitivity to fine-grained congestion fluctuations.</p>
+
+    <p>Our architecture's design principles emphasize the balance between expressive power and computational efficiency. By integrating GCNs for spatial modeling, recurrent processing for temporal dynamics, and attention mechanisms for adaptive feature selection, we create a model capable of capturing the complex, interrelated nature of congestion in MAPF scenarios. This approach enables our model to provide context-aware congestion predictions that can be efficiently updated in real-time, making it well-suited for integration into dynamic path planning algorithms.</p>
 
     <script>
     // You can add any JavaScript here if needed
