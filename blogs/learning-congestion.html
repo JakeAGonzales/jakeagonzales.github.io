@@ -129,15 +129,28 @@
             The GIFs above demonstrate two instances of different predictions on distinct MAPF problems, showcasing the capabilities of our congestion prediction model. In both animations, we can observe the dynamic nature of congestion as agents navigate through the environment.
         </p>
         <p>
-            The first GIF illustrates the congestion function prediction, where the model anticipates areas of high traffic and potential bottlenecks. The color intensity represents the predicted congestion levels, with darker colors indicating higher congestion. As agents move, we can see how the predicted congestion patterns evolve over time, helping to inform path planning decisions.
-        </p>
-        <p>
-            The second GIF showcases the temporal aspect of our congestion prediction, emphasizing how the model captures the time-dependent nature of agent movements and interactions. This visualization helps in understanding how congestion builds up and dissipates across different areas of the map as time progresses, which is crucial for developing efficient, adaptive path-finding strategies in complex multi-agent scenarios.
-        </p>
-        <p>
             These results demonstrate the effectiveness of our deep learning approach in capturing both spatial and temporal aspects of congestion in MAPF problems. By accurately predicting congestion patterns, we can potentially improve path planning algorithms, leading to more efficient navigation and reduced conflicts in multi-agent systems.
         </p>
     </div>
+    <h2>Conclusion</h2>
+    <p>
+        In this blog post, we've explored the integration of machine learning techniques, specifically deep learning, to predict and manage congestion in Multi-Agent Path Finding (MAPF) scenarios. Our approach addresses one of the most significant challenges in MAPF: scalability in complex, high-density environments.
+    </p>
+    <p>
+        By decomposing the problem into subregions and employing a sophisticated architecture that combines Graph Convolutional Networks (GCNs), recurrent processing, and attention mechanisms, we've developed a model capable of capturing both spatial and temporal aspects of congestion. This approach allows for dynamic, context-aware predictions that can be updated in real-time, making it particularly well-suited for integration into adaptive path planning algorithms.
+    </p>
+    <p>
+        The results demonstrated through our visualizations highlight the model's ability to anticipate areas of high traffic and potential bottlenecks, as well as capture the time-dependent nature of agent movements and interactions. These insights have the potential to significantly improve path planning strategies, leading to more efficient navigation and reduced conflicts in multi-agent systems.
+    </p>
+    <p>
+        Looking forward, this research opens up exciting possibilities for enhancing MAPF algorithms and their applications in various domains, including warehouse automation, traffic management, and robotics. By accurately predicting congestion patterns, we can develop more robust and efficient solutions for coordinating large numbers of agents in complex environments.
+    </p>
+    <p>
+        The integration of machine learning with traditional MAPF approaches represents a promising direction for future research, potentially leading to breakthroughs in scalability and performance for multi-agent systems.
+    </p>
+    <p>
+        <strong>Note:</strong> The code for this project will be made available soon. Stay tuned for updates on how to access and implement these congestion prediction models in your own MAPF applications.
+    </p>
 
     <script>
     // You can add any JavaScript here if needed
