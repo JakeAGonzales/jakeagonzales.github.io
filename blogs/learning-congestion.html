@@ -78,6 +78,7 @@
     <p>Congestion is undoubtedly a critical factor in MAPF scenarios, particularly in high-density environments or those with limited resources. Predicting and managing congestion across the flow of agents is crucial for improving overall system throughput and anticipating agent interactions. By incorporating congestion prediction into MAPF algorithms, we can potentially enhance path planning strategies, leading to more efficient and robust solutions in complex, multi-agent environments.</p>
 
     <h2>Congestion Prediction</h2>
+    <h3>Background and Setup</h3>
     <p>In recent years, machine learning methods have gained significant traction in the field of Multi-Agent Path Finding (MAPF), offering promising avenues to enhance the scalability and efficiency of existing solvers. These data-driven approaches leverage patterns and heuristics learned from vast amounts of MAPF instances to guide search algorithms, prune search spaces, or directly approximate solutions. By incorporating machine learning techniques, researchers aim to overcome the computational bottlenecks associated with traditional exact solvers, especially when dealing with large-scale problems involving hundreds or thousands of agents. In light of this, we developed a deep learning approach to perform congestion prediction across warehouse floors in MAPF scenarios. This method aims to anticipate areas of high agent density and potential conflicts, thereby informing path planning decisions and improving overall system throughput.</p>
 
     <p>Formally, we model the MAPF problem on a graph abstraction \(\mathcal{G} = (\mathcal{V}, \mathcal{E})\), where \(\mathcal{V}\) represents the set of vertices (locations) and \(\mathcal{E}\) denotes the set of edges (connections between adjacent locations). Let \(A = \{a_1, a_2, \ldots, a_n\}\) be the set of \(n\) agents. Each agent \(a_i\) has a start vertex \(s_i \in \mathcal{V}\) and a goal vertex \(g_i \in \mathcal{V}\). Time is discretized, and at each time step, an agent can either move to an adjacent vertex or wait at its current vertex. A solution to the MAPF problem is a set of paths \(P = \{p_1, p_2, \ldots, p_n\}\), where \(p_i = \langle v_i^0, v_i^1, \ldots, v_i^k \rangle\) represents the path of agent \(a_i\), with \(v_i^0 = s_i\) and \(v_i^k = g_i\). The solution must satisfy the following constraints:</p>
@@ -89,7 +90,6 @@
 
     <p>The objective is typically to minimize a cost function, such as the sum of individual path lengths or the makespan (maximum individual path length). The computational complexity of optimal MAPF is NP-hard, necessitating the development of efficient approximate or bounded suboptimal algorithms for practical applications.</p>
 
-    <h2>Background and Setup</h2>
     <p>In our large hierarchical framework, we decompose the warehouse into subregions to better learn congestion patterns. We focus on learning congestion within these subregions, specifically utilizing a 14x14 subregion with obstacles. The number of agents in each subregion is determined by a heuristic based on the subregion size, resulting in 4-16 agents per subregion. Each agent's source-destination pair is set such that the agent starts on a boundary node of the subregion and attempts to reach the opposite boundary.</p>
 
     <p>We connect these learned congestion models to nonatomic routing games to solve for equilibrium solution concepts of the traffic flow from large fleets of agents. This will be explained in a later blog post. In this context, each edge has an associated congestion function where we aim to learn this function across the map. The congestion function is expressed as:</p>
@@ -102,7 +102,6 @@
 
     <p>where \(l(x)\) is the congestion function we are learning, \(A\) is the congestion coefficient matrix, \(x\) represents the flow (agents traveling across nodes), and \(b\) is the free flow time.</p>
 
-    <h2>Setup</h2>
     <h3>Data Preparation</h3>
     <p>We collected and prepared data from multiple instances of Conflict-Based Search (CBS). Our dataset comprises approximately 25,000 problem instances for training and 5,000 problem instances for testing. This extensive dataset allows us to capture a wide range of congestion scenarios and agent interactions within the defined subregions, providing a robust foundation to learn congestion.</p>
 
