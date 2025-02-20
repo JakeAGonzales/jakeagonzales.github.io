@@ -472,3 +472,22 @@ h3 a:hover {
         margin-top: 0.2em;
     }
 }
+
+.list-item.publication {
+  height: 200px;
+  margin-bottom: 30px; /* Add extra margin between items */
+  overflow: visible; /* Allow content to extend beyond container if needed */
+  position: relative; /* Ensure proper stacking */
+}
+
+/* Make thumbnails consistent size */
+.thumbnail img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* Ensure grid has enough spacing */
+.grid {
+  margin-bottom: 40px;
+}
