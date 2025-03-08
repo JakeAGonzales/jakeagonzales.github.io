@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <!-- Google analytics tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,25 +9,39 @@
       gtag('config', 'G-STGLQW4BJX');
     </script>
 
-    <!-- Title -->
     <title>Jake's Homepage</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1000">
 
-    <!-- Isotope JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+      
+      /* Add these styles to reduce spacing */
+      .list-item.publication {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+      }
+      
+      .list-item.publication .project-description {
+        margin-top: 5px;
+      }
+      
+      .list-item.publication .thumbnail {
+        margin-bottom: 5px;
+      }
+      
+      .grid {
+        margin-top: 10px;
+      }
     </style>
   </head>
 
@@ -73,21 +86,17 @@
       </div>
 
       <div id="filters" class="button-group">
-        <!-- <button class="button" data-filter="*">Show All</button> -->
-        <!-- <button class="button is-checked" data-filter=".highlight">Highlights</button> -->
         <button class="button" data-filter=".publication">research</button>
         <button class="button" data-filter=".teaching">teaching</button>
         <button class="button" data-filter=".service">service</button>
         <button class="button" data-filter=".blog">blogs</button>
-        
-        
       </div>
 
       <div class="grid">
 
         <div class="list-item publication" data-category="publication">
           <a href="" class="thumbnail">
-            <img src="images/hero3.png" alt="" />
+            <img src="images/hero_karen.png" alt="" />
           </a>
           <div class="project-description">
             <h3>Safe Probabilistic Planning in Human-Robot Interaction using Conformal Risk Control</h3>
@@ -95,7 +104,6 @@
               <strong>Jake Gonzales</strong>, Kazuki Mizuta, Lillian Ratliff, Karen Leung<br>
                 <i>In Preperation</i><br>
                 <a href="https://jakeagonzales.github.io/crc-cbf-website/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
           </div>
         </div>
@@ -110,7 +118,6 @@
               <strong>Jake Gonzales</strong>, Joey Sullivan, Samuel Burden, Lillian Ratliff, Daniel Calderone<br>
                 <i>In Preperation</i><br>
                 <a href="docs/poster.pdf">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
           </div>
         </div>
@@ -126,7 +133,6 @@
                 <i>International Conference on Robotics and Automation (ICRA) 2024</i><br>
                 <a href="https://mit-realm.github.io/pncbf/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                 <a href="https://arxiv.org/pdf/2310.15478">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
           </div>
         </div>
@@ -141,7 +147,6 @@
               Adam J. Thorpe, <strong>Jake A. Gonzales</strong>, Meeko MK Oishi <br>
                 <i>American Control Conference, 2023</i><br>
                 <a href="https://arxiv.org/pdf/2209.09205">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
           </div>
         </div>
@@ -156,7 +161,6 @@
               Sofie W. Schunk, Shane McMurray, <strong>Jake A. Gonzales</strong><br>
                 <i>Model Validation and Uncertainty Quantification, Volume 3, Proceedings of the 41st IMAC, 2023</i><br>
                 <a href="https://www.osti.gov/servlets/purl/2006082">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
             </p>
           </div>
         </div>
@@ -174,7 +178,6 @@
           </div>
         </div>
 
-        <!-- Teaching -->
         <div class="list-item teaching" data-category="teaching">
           <ul>
               <li>
@@ -213,7 +216,6 @@
           </ul>
         </div>
 
-        <!-- Services -->
         <div class="list-item service" data-category="service">
           <ul>
               <li>
@@ -240,13 +242,7 @@
           </ul>
         </div>
 
-
-        <!-- Blogs-->
         <div class="list-item blog" data-category="blog">
-          <!---
-          <p class="date">July 2024</p>
-          <a href="blogs/learning-congestion.html">Learning congestion in multi-agent path finding</a>
-        --> 
         </div>
         
       </div>
@@ -256,8 +252,6 @@
     </div>
 
     <script>
-
-      // Isotope grid.
       var $grid = $('.grid').isotope({
         itemSelector: '.list-item',
         layoutMode: 'fitRows',
@@ -276,14 +270,12 @@
         }
       });
 
-      // Bind filter button click.
       $('#filters').on( 'click', 'button', function() {
         var filterValue = $( this ).attr('data-filter');
         localStorage.setItem('filterValue', filterValue);
         $grid.isotope({ filter: filterValue });
       });
 
-      // Change is-checked class on buttons.
       $('.button-group').each( function( i, buttonGroup ) {
         var $buttonGroup = $( buttonGroup );
         $buttonGroup.on( 'click', 'button', function() {
@@ -293,7 +285,6 @@
       });
 
       function update_isotope() {
-        // Retrieve cached button click.
         var defaultFilterValue = localStorage.getItem('filterValue');
         if (defaultFilterValue == null) {
           defaultFilterValue = ".highlight"
@@ -336,7 +327,6 @@
       }
 
       update_isotope();
-
     </script>
   </body>
 </html>
