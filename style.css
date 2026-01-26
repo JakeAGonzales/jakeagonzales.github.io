@@ -44,6 +44,10 @@ table {
   border-spacing: 0;
 }
 
+ :root {
+   --accent-blue: 20, 110, 190;
+ }
+
 /**************************************************/
 
 #body{
@@ -479,8 +483,8 @@ h3 a:hover {
   display: flow-root;
   padding: 14px 16px;
   border-radius: 10px;
-  background: rgba(20, 110, 190, 0.08);
-  border: 1px solid rgba(20, 110, 190, 0.14);
+  background: rgba(var(--accent-blue), 0.06);
+  border: 1px solid rgba(var(--accent-blue), 0.12);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
