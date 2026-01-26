@@ -474,10 +474,14 @@ h3 a:hover {
 }
 
 .list-item.publication {
-  height: 120px;          /* Reduced from 200px */
   margin-bottom: 15px;    /* Reduced from 30px */
-  overflow: visible;
   position: relative;
+  display: flow-root;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(20, 110, 190, 0.08);
+  border: 1px solid rgba(20, 110, 190, 0.14);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* Make thumbnails consistent size */
