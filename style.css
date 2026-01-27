@@ -484,8 +484,8 @@ h3 a:hover {
   display: flow-root;
   padding: 14px 16px;
   border-radius: 10px;
-  background: #e7f4ff;
-  border: 1px solid #bfe3ff;
+  background: rgba(231, 244, 255, 0.75);
+  border: 1px solid rgba(191, 227, 255, 0.7);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
