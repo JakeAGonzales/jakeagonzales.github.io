@@ -459,6 +459,44 @@ h3 a:hover {
   margin-top: 0.4em;
 }
 
+/* Mentees list with blue arrow bullets (used inside mentorship card) */
+.mentees-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5em;
+}
+
+.mentees-list li {
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: baseline;
+  font-size: 0.95em;
+  line-height: 1.5em;
+  color: #150c21;
+}
+
+.mentees-list li::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 0.35em solid transparent;
+  border-bottom: 0.35em solid transparent;
+  border-left: 0.55em solid rgb(20, 110, 190);
+  margin-right: 0.6em;
+  flex-shrink: 0;
+  position: relative;
+  top: 0.05em;
+}
+
+.mentees-list .mentee-name {
+  flex: 1;
+}
+
+.mentees-list li .card-meta {
+  margin-left: 1em;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .card-item-header {
