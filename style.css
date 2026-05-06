@@ -493,6 +493,11 @@ h3 a:hover {
   flex: 1;
 }
 
+.mentees-list .mentee-name,
+.mentees-list .mentee-name a {
+  font-family: inherit;
+}
+
 .mentees-list li .card-meta {
   margin-left: 1em;
 }
