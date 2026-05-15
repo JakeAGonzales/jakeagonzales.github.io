@@ -265,6 +265,18 @@ h2 {
   object-fit: contain;
 }
 
+.thumbnail-risk {
+  width: 20%;
+}
+
+.thumbnail-risk img {
+  margin-top: 0;
+  padding: 0.2em;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
 .thumbnail video {
   margin-top: 0.4em;
   border-radius: 5px;
