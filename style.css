@@ -324,21 +324,31 @@ h3 a:hover {
 #news h2 {
   font-size: 1.8em;
   color: #150c21;
-  margin-bottom: 0.2em; /* Reduced from 0.3em */
+  margin-bottom: 0.35em;
   margin-top: 0; /* Added to remove top margin */
 }
 
 #news ul {
   list-style-type: none;
   padding-left: 0;
-  margin-top: 0.2em; /* Added to reduce space below header */
+  margin-top: 0;
+  max-height: 14.25em;
+  overflow-y: auto;
+  padding-right: 0.85em;
+  padding-bottom: 0.35em;
+  scrollbar-gutter: stable;
 }
 
 
 #news li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.9em;
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
+  padding-right: 0.15em;
+}
+
+#news li:last-child {
+  margin-bottom: 0;
 }
 
 #news li::before {
@@ -358,27 +368,14 @@ h3 a:hover {
 .news-date {
   font-weight: 600;
   color: #666;
-  margin-right: 1em;
-  min-width: 6em;
+  margin-right: 1.1em;
+  min-width: 6.25em;
   display: inline-block;
 }
 
 .news-description {
   color: #150c21;
-}
-
-.view-all {
-  margin-top: 0.5em;
-  text-align: right;
-}
-
-.view-all a {
-  color: rgb(20, 110, 190);
-  font-weight: 400;
-}
-
-.view-all a:hover {
-  text-decoration: underline;
+  line-height: 1.5em;
 }
 
 /* ALL NEWS SECTION CSS */ 
