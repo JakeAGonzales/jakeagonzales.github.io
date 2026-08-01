@@ -378,22 +378,13 @@ h3 a:hover {
   line-height: 1.5em;
 }
 
-.expand-news-btn {
-  background-color: rgb(20, 110, 190);
-  color: #fff;
-  border: none;
-  border-radius: 0.3em;
-  padding: 0.4em 0.8em;
-  font-size: 0.85em;
-  font-family: 'Asap', roboto, sans-serif;
+.expand-news-link {
+  display: block;
+  text-align: right;
+  color: rgb(20, 110, 190);
   cursor: pointer;
-  margin-bottom: 0.7em;
-  display: inline-block;
-  transition: background-color 0.15s ease;
-}
-
-.expand-news-btn:hover {
-  background-color: rgb(15, 85, 150);
+  margin-top: 0.5em;
+  font-size: 0.95em;
 }
 
 #news ul.expanded {
