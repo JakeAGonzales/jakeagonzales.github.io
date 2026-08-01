@@ -71,6 +71,7 @@
       
       <div id="news">
         <h2>news</h2>
+        <button id="news-toggle" class="expand-news-btn" onclick="toggleNews()">Expand full list</button>
         <ul>
           <li><span class="news-date">June 2026</span> <span class="news-description">I started an internship as a Robotics Applied Scientist in the Industrial Robotics Group at Amazon!</span></li>
           <li><span class="news-date">May 2026</span> <span class="news-description">Excited to share our latest preprint, <a href="https://arxiv.org/abs/2605.09946">Structure from Strategic Interaction &amp; Uncertainty: Risk Sensitive Games for Robust Preference Learning</a>!</span></li>
@@ -113,7 +114,7 @@
 
         <div class="list-item publication" data-category="publication">
           <a href="" class="thumbnail">
-            <img src="images/overcooked_t0.pdf" alt="" />
+            <img src="images/overcooked_t0.png" alt="" />
           </a>
           <div class="project-description">
             <h3>Strategically Robust Multi-Agent Reinforcement Learning with Linear Function Approximation</h3>
@@ -431,6 +432,17 @@
           y.style.display = "none";
           b.innerHTML = "Show more"
           update_isotope();
+        }
+      }
+
+      function toggleNews() {
+        var ul = document.querySelector('#news ul');
+        var btn = document.getElementById('news-toggle');
+        ul.classList.toggle('expanded');
+        if (ul.classList.contains('expanded')) {
+          btn.innerHTML = 'Collapse list';
+        } else {
+          btn.innerHTML = 'Expand full list';
         }
       }
 

@@ -378,6 +378,30 @@ h3 a:hover {
   line-height: 1.5em;
 }
 
+.expand-news-btn {
+  background-color: rgb(20, 110, 190);
+  color: #fff;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.4em 0.8em;
+  font-size: 0.85em;
+  font-family: 'Asap', roboto, sans-serif;
+  cursor: pointer;
+  margin-bottom: 0.7em;
+  display: inline-block;
+  transition: background-color 0.15s ease;
+}
+
+.expand-news-btn:hover {
+  background-color: rgb(15, 85, 150);
+}
+
+#news ul.expanded {
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 0;
+}
+
 /* ALL NEWS SECTION CSS */ 
 #all-news ul {
   list-style-type: none;
